@@ -1,10 +1,10 @@
 package base;
-public class user {
+public class User {
 	private long userID;
 	private String userName;
 	private String userEmail;
 	
-	public user(long ID, String Name, String Email){
+	public User(long ID, String Name, String Email){
 		userID = ID;
 		userName = Name;
 		userEmail = Email;
@@ -49,7 +49,7 @@ public class user {
 			ans = false;
 			}
 			else {
-				user p = (user) o;
+				User p = (User) o;
 				if((this.userID != p.userID)||(this.userName != p.userName)||(this.userEmail != p.userEmail)){
 					ans = false;
 			}

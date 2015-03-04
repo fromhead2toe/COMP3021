@@ -3,7 +3,7 @@ package base;
 import java.util.Date;
 
 
-public class post {
+public class Post {
 	private Date date;
 	private String content;
 /**
@@ -11,7 +11,7 @@ public class post {
  * @param x
  * @param y
  */
-	public post(Date x,String y){
+	public Post(Date x,String y){
 		date = x;
 		content = y;
 	}	
@@ -50,7 +50,7 @@ public class post {
 			ans = false;
 			}
 			else {
-				post p = (post) o;
+				Post p = (Post) o;
 				if((this.date != p.date)||(this.content != p.content)){
 					ans = false;
 			}
