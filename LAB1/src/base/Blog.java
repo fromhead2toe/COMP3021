@@ -1,6 +1,7 @@
 package base;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Blog {
 	private User user;
@@ -24,6 +25,13 @@ public class Blog {
 	public User getUser(){
 		return this.user;
 	}
+	
+	public void setPosts(ArrayList<Post> allPosts){
+		this.allPosts = allPosts;
+	}
+	
+
+
 	
 	public void post(Post p){
 		this.allPosts.add(p);
@@ -60,5 +68,17 @@ public class Blog {
 	}
 	public int hashCode(){
 		return 0;
+	}
+	
+	public void search(int month, String someone){
+		Calendar cal = Calendar.getInstance();
+		
+		for(Post p:allPosts){
+			cal.setTime(p.getDate());
+			int postMonth = cal.get(Calendar.MONTH) +1;
+			if((postMonth == month)&&(p.contains(someone))){
+				System.out.println(p);
+			}
+		}
 	}
 }

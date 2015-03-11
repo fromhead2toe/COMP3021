@@ -1,5 +1,5 @@
 package base;
-public class User {
+public class User implements Comparable<User>{
 	private long userID;
 	private String userName;
 	private String userEmail;
@@ -65,6 +65,18 @@ public class User {
 	    return hashCode;
 	}
 	
+	@Override
+	public int compareTo(User u){
+		if(this.userID > u.userID ){
+			return 1;
+		}
+		else if(this.userID < u.userID){
+			return -1;
+		}
+		else{
+		return 0;
+		}
+	}
 
 	
 }
